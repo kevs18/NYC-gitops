@@ -14,6 +14,9 @@ agent_options:
   path: ../lib/agent-options.yml
 controls:
   enable_disk_encryption: true
+  ipados_updates:
+    deadline: "2025-12-31"
+    minimum_version: "26.0"
   macos_settings:
     custom_settings:
       -path: ../lib/macos/configuration-profiles/disable-bluetooth-file-sharing.mobileconfig
