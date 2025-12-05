@@ -9,6 +9,7 @@
 
 name: Engineering
 policies:
+  - path: ../lib/windows/policies/all-windows-updates-installed.policies.yml
 queries:
 agent_options:
   path: ../lib/agent-options.yml
@@ -25,6 +26,14 @@ controls:
     - path: ../lib/macos/scripts/remove-zoom-artifacts.script.sh
     - path: ../lib/windows/scripts/set-wallpaper.ps1
 team_settings:
+  webhook_settings:
+    failing_policies_webhook:
+      enable_failing_policies_webhook: true
+      destination_url: https://webhook.site/ecc254b2-0354-44ac-85d8-4a4d222cbf3f
+      host_batch_size: 0
+      policy_ids:
+        - 1
+        - 2
   secrets:
     - secret: "$FLEET_ENGINEERING_ENROLL_SECRET"
   features:
